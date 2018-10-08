@@ -29,6 +29,12 @@ var sum = function(array) {
 var arraySum = function(array) {
   if (array.length = 0){
     return 0;
+  } else {
+    if(Array.isArray(array[0])) {
+      return arraySum(array[0]) + arraySum(array.slice(1));
+    } else {
+      return array[0] + arraySum(array.slice(1));
+    }
   }
 };
 
